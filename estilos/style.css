@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+/*
+    Paleta de cores
+    
+*/
+
+* {
+    font-family: ;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+/* Cores oficiais das redes sociais */
+.fa-facebook { color: #1877f2; }
+.fa-instagram { color: #e4405f; }
+.fa-x-twitter { color: #000000; }
+.fa-youtube { color: #ff0000; }
+
+/* Efeito hover para destacar */
+footer a:hover i {
+    opacity: 0.7;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
