@@ -1,56 +1,53 @@
-@charset "UTF-8"; 
+@charset "UTF-8";
 
-/* ===========================
-   Importando fontes do Google Fonts
-   =========================== */
+/* Importando fontes do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); /* Para títulos grandes, destaque */
 @import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap'); /* Para subtítulos ou headings médios */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap'); /* Para texto normal e parágrafos */
 
-/* ===========================
-   Paleta de cores
-   =========================== */
+
+/* Paleta de cores inspirada nas capas do Acústico e 30 Anos do Kid Abelha */
+
+/* Tons principais */
 :root {
     --laranja-queimado: #E85A2C;
     --vermelho-vibrante: #D93A2B;
     --amarelo-dourado: #F5B932;
 
+    /* Tons secundários */
     --roxo-escuro: #3C1F5C;
     --azul-noite: #1D2C59;
     --cinza-medio: #777777;
 
+    /* Preto e branco básico */
     --preto: #000000;
     --branco: #FFFFFF;
+}
 
-    /* Padrão tipográfico */
+/* Padrão de tipografia para o site */
+:root {
     --font-title: 'Bebas Neue', cursive;
     --font-subtitle: 'Passion One', sans-serif;
     --font-body: 'Roboto', sans-serif;
 }
 
-/* ===========================
-   RESET BÁSICO
-   =========================== */
+/* RESET BÁSICO */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ===========================
-   BODY
-   =========================== */
 body {
     font-family: var(--font-body);
     font-size: 16px;
     line-height: 1.6;
     color: var(--preto);
     background-color: var(--branco);
+    line-height: 1.6;
 }
 
-/* ===========================
-   HEADER
-   =========================== */
+/* HEADER */
 header {
     background-color: var(--roxo-escuro);
     padding: 15px 0;
@@ -62,20 +59,15 @@ header .logo {
     height: auto;
 }
 
-/* ===========================
-   NAVBAR
-   =========================== */
+/* NAVBAR */
 .navbar {
     background-color: var(--azul-noite) !important;
     padding: 10px 0;
-    font-family: var(--font-subtitle);
 }
 
 .navbar .navbar-brand {
     color: var(--amarelo-dourado) !important;
     font-weight: bold;
-    font-family: var(--font-title);
-    letter-spacing: 2px;
 }
 
 .navbar .nav-link {
@@ -92,13 +84,11 @@ header .logo {
 /* FORMULÁRIO DE PESQUISA */
 .navbar .form-control {
     border-radius: 4px;
-    font-family: var(--font-body);
 }
 
 .navbar .btn-outline-success {
     border-color: var(--laranja-queimado);
     color: var(--laranja-queimado);
-    font-family: var(--font-subtitle);
     transition: all 0.3s ease;
 }
 
@@ -108,28 +98,21 @@ header .logo {
     border-color: var(--vermelho-vibrante);
 }
 
-/* ===========================
-   MAIN
-   =========================== */
+/* MAIN */
 main {
     padding: 40px 20px;
 }
 
-/* ===========================
-   SEÇÕES SECUNDÁRIAS
-   =========================== */
+/* SEÇÕES SECUNDÁRIAS */
 .section-secondary {
     background-color: var(--cinza-medio);
     color: var(--branco);
     padding: 30px 20px;
     border-radius: 8px;
     margin: 20px 0;
-    font-family: var(--font-body);
 }
 
-/* ===========================
-   BOTÕES
-   =========================== */
+/* BOTÕES */
 button, .btn-primary {
     background-color: var(--laranja-queimado);
     color: var(--branco);
@@ -137,8 +120,6 @@ button, .btn-primary {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    font-family: var(--font-subtitle);
-    font-weight: 700;
     transition: background-color 0.3s ease;
 }
 
@@ -146,11 +127,8 @@ button:hover, .btn-primary:hover {
     background-color: var(--vermelho-vibrante);
 }
 
-/* ===========================
-   LINKS
-   =========================== */
+/* LINKS DE DESTAQUE */
 a {
-    font-family: var(--font-body);
     color: var(--laranja-queimado);
     text-decoration: none;
     transition: color 0.3s ease;
@@ -160,14 +138,11 @@ a:hover {
     color: var(--vermelho-vibrante);
 }
 
-/* ===========================
-   HEADINGS
-   =========================== */
+/* TÍTULOS - HEADINGS */
 h1, h2, h3, h4, h5, h6 {
     color: var(--amarelo-dourado);
     margin-bottom: 15px;
 }
-
 h1 {
     font-family: var(--font-title);
     font-size: 3rem;
@@ -188,21 +163,17 @@ h3 {
 
 h4, h5, h6 {
     font-family: var(--font-body);
-    font-weight: bold;
+    color: var(--amarelo-dourado);
 }
 
-/* ===========================
-   TEXTO PADRÃO
-   =========================== */
+/* PARÁGRAFOS */
 p, li, span {
     font-family: var(--font-body);
     font-size: 1rem;
     color: var(--preto);
 }
 
-/* ===========================
-   CARDS DE ÁLBUNS
-   =========================== */
+/* CARDS DE ÁLBUNS */
 .card-album {
     background-color: var(--cinza-medio);
     color: var(--branco);
@@ -210,7 +181,6 @@ p, li, span {
     overflow: hidden;
     margin: 15px 0;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    font-family: var(--font-body);
 }
 
 .card-album img {
@@ -224,7 +194,6 @@ p, li, span {
 
 .card-album-body h3 {
     color: var(--amarelo-dourado);
-    font-family: var(--font-subtitle);
     margin-bottom: 10px;
 }
 
@@ -237,9 +206,7 @@ p, li, span {
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* ===========================
-   SEÇÃO DE TOUR
-   =========================== */
+/* SEÇÃO DE TOUR */
 .tour-item {
     background-color: var(--roxo-escuro);
     color: var(--branco);
@@ -247,7 +214,6 @@ p, li, span {
     border-radius: 8px;
     margin: 10px 0;
     transition: background-color 0.3s ease;
-    font-family: var(--font-body);
 }
 
 .tour-item:hover {
@@ -255,16 +221,13 @@ p, li, span {
     color: var(--branco);
 }
 
-/* ===========================
-   FORMULÁRIO DE CONTACTO
-   =========================== */
+/* FORMULÁRIO DE CONTACTO */
 form.contact-form {
     background-color: var(--cinza-medio);
     padding: 20px;
     border-radius: 8px;
     max-width: 600px;
     margin: 0 auto 30px auto;
-    font-family: var(--font-body);
 }
 
 form.contact-form input,
@@ -276,22 +239,18 @@ form.contact-form textarea {
     border: 1px solid var(--branco);
     background-color: var(--branco);
     color: var(--preto);
-    font-family: var(--font-body);
 }
 
 form.contact-form button {
     width: 100%;
 }
 
-/* ===========================
-   FOOTER
-   =========================== */
+/* FOOTER */
 footer {
     background-color: var(--azul-noite);
     color: var(--branco);
     text-align: center;
     padding: 20px 0;
-    font-family: var(--font-body);
 }
 
 footer a {
@@ -304,10 +263,9 @@ footer a:hover {
     color: var(--laranja-queimado);
 }
 
-/* ÍCONES FONT AWESOME */
+/* ÍCONES DE REDES SOCIAIS */
 footer i {
     font-size: 1.5rem;
-    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 /* Cores oficiais das redes sociais */
@@ -316,8 +274,9 @@ footer i {
 .fa-x-twitter { color: #000000; }
 .fa-youtube { color: #ff0000; }
 
-/* Efeito hover para ícones */
+/* Efeito hover para destacar */
 footer a:hover i {
     opacity: 0.7;
     transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
 }
