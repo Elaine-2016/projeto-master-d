@@ -1,9 +1,22 @@
 @charset "UTF-8";
 
-/*
-    Paleta de cores
-    
-*/
+/* Paleta de cores inspirada nas capas do Acústico e 30 Anos do Kid Abelha */
+
+/* Tons principais */
+:root {
+    --laranja-queimado: #E85A2C;
+    --vermelho-vibrante: #D93A2B;
+    --amarelo-dourado: #F5B932;
+
+    /* Tons secundários */
+    --roxo-escuro: #3C1F5C;
+    --azul-noite: #1D2C59;
+    --cinza-medio: #777777;
+
+    /* Preto e branco básico */
+    --preto: #000000;
+    --branco: #FFFFFF;
+}
 
 * {
     font-family: ;
