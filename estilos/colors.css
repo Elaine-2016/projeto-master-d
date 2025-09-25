@@ -1,73 +1,122 @@
-@charset "UTF-8";
+@charset "UTF-8"; 
 
-/* Importando fontes do Google Fonts */
+/* ===========================
+   Importando fontes do Google Fonts
+   =========================== */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); /* Para títulos grandes, destaque */
 @import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap'); /* Para subtítulos ou headings médios */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap'); /* Para texto normal e parágrafos */
 
-
-/* Paleta de cores inspirada nas capas do Acústico e 30 Anos do Kid Abelha */
-
-/* Tons principais */
+/* ===========================
+   Paleta de cores
+   =========================== */
 :root {
     --laranja-queimado: #E85A2C;
     --vermelho-vibrante: #D93A2B;
     --amarelo-dourado: #F5B932;
 
-    /* Tons secundários */
     --roxo-escuro: #3C1F5C;
     --azul-noite: #1D2C59;
     --cinza-medio: #777777;
 
-    /* Preto e branco básico */
     --preto: #000000;
     --branco: #FFFFFF;
-}
 
-/* Padrão de tipografia para o site */
-:root {
+    /* Padrão tipográfico */
     --font-title: 'Bebas Neue', cursive;
     --font-subtitle: 'Passion One', sans-serif;
     --font-body: 'Roboto', sans-serif;
 }
 
-/* RESET BÁSICO */
+/* ===========================
+   RESET BÁSICO
+   =========================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ===========================
+   BODY
+   =========================== */
 body {
     font-family: var(--font-body);
     font-size: 16px;
     line-height: 1.6;
     color: var(--preto);
     background-color: var(--branco);
-    line-height: 1.6;
 }
 
-/* HEADER */
+/* ===========================
+   HEADER
+   =========================== */
+/* HEADER COM BACKGROUND POR PÁGINA */
 header {
-    background-color: var(--roxo-escuro);
-    padding: 15px 0;
+    color: var(--branco);
     text-align: center;
+    padding: 40px 0;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
+/* Fundo específico para cada página */
+.pagina-index header {
+    background-image: url("../imagens/bg-index.jpg");
+}
+
+.pagina-sobre header {
+    background-image: url("../imagens/bg-sobre.jpg");
+}
+
+.pagina-albuns header {
+    background-image: url("../imagens/bg-albuns.jpg");
+}
+
+.pagina-tours header {
+    background-image: url("../imagens/bg-tours.jpg");
+}
+
+.pagina-contatos header {
+    background-image: url("../imagens/bg-contatos.jpg");
+}
+
+/* Ajuste da logo dentro do header */
 header .logo {
+    position: relative;
+    z-index: 2;
     max-width: 200px;
-    height: auto;
 }
 
-/* NAVBAR */
+/* Overlay para melhorar contraste */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(28, 28, 28, 0.55); /* leve sobreposição */
+    z-index: 1;
+}
+
+/* ===========================
+   NAVBAR
+   =========================== */
 .navbar {
     background-color: var(--azul-noite) !important;
     padding: 10px 0;
+    font-family: var(--font-subtitle);
 }
 
 .navbar .navbar-brand {
     color: var(--amarelo-dourado) !important;
     font-weight: bold;
+    font-family: var(--font-title);
+    letter-spacing: 2px;
+    font-size: 1.5rem; /* padrão mobile */
 }
 
 .navbar .nav-link {
@@ -84,11 +133,13 @@ header .logo {
 /* FORMULÁRIO DE PESQUISA */
 .navbar .form-control {
     border-radius: 4px;
+    font-family: var(--font-body);
 }
 
 .navbar .btn-outline-success {
     border-color: var(--laranja-queimado);
     color: var(--laranja-queimado);
+    font-family: var(--font-subtitle);
     transition: all 0.3s ease;
 }
 
@@ -98,21 +149,106 @@ header .logo {
     border-color: var(--vermelho-vibrante);
 }
 
-/* MAIN */
+/* ===========================
+   MAIN
+   =========================== */
 main {
     padding: 40px 20px;
+    min-height: 100vh;
 }
 
-/* SEÇÕES SECUNDÁRIAS */
+/* MAIN com imagem de fundo - Home */
+.main-home {
+    background-image: url("../imagens/bg-main-index02.jpg"); /* troque pelo nome da sua imagem */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--branco);
+    position: relative;
+    padding: 80px 20px;
+    /* centraliza o conteúdo */
+    display: flex;
+    align-items: center;   /* centraliza vertical */
+    justify-content: center; /* centraliza horizontal */
+    text-align: center;
+    padding: 20px;
+}
+/* Overlay para garantir contraste */
+.main-home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(28, 28, 28, 0.6); /* sobreposição escura */
+    z-index: 1;
+}
+
+/* Garante que o texto fique acima do overlay */
+.main-home .container {
+    position: relative;
+    z-index: 2;
+}
+
+.main-home p {
+    color: var(--branco);
+     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* MAIN com imagem de fundo - Sobre */
+.main-sobre {
+    background-image: url("../imagens/bg-main-sobre.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    color: var(--branco);
+}
+
+.main-sobre::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(28,28,28,0.6);
+    z-index: 1;
+}
+
+.main-sobre > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Listas de ex-integrantes */
+.lista-integrantes li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+/* ===========================
+   SEÇÕES SECUNDÁRIAS
+   =========================== */
 .section-secondary {
     background-color: var(--cinza-medio);
     color: var(--branco);
     padding: 30px 20px;
     border-radius: 8px;
     margin: 20px 0;
+    font-family: var(--font-body);
 }
 
-/* BOTÕES */
+/* ===========================
+   BOTÕES
+   =========================== */
 button, .btn-primary {
     background-color: var(--laranja-queimado);
     color: var(--branco);
@@ -120,6 +256,8 @@ button, .btn-primary {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    font-family: var(--font-subtitle);
+    font-weight: 700;
     transition: background-color 0.3s ease;
 }
 
@@ -127,8 +265,11 @@ button:hover, .btn-primary:hover {
     background-color: var(--vermelho-vibrante);
 }
 
-/* LINKS DE DESTAQUE */
+/* ===========================
+   LINKS
+   =========================== */
 a {
+    font-family: var(--font-body);
     color: var(--laranja-queimado);
     text-decoration: none;
     transition: color 0.3s ease;
@@ -138,11 +279,23 @@ a:hover {
     color: var(--vermelho-vibrante);
 }
 
-/* TÍTULOS - HEADINGS */
+.main-sobre a {
+    color: var(--laranja-queimado);
+    text-decoration: underline;
+}
+
+.main-sobre a:hover {
+    color: var(--vermelho-vibrante);
+}
+
+/* ===========================
+   HEADINGS
+   =========================== */
 h1, h2, h3, h4, h5, h6 {
     color: var(--amarelo-dourado);
     margin-bottom: 15px;
 }
+
 h1 {
     font-family: var(--font-title);
     font-size: 3rem;
@@ -163,17 +316,49 @@ h3 {
 
 h4, h5, h6 {
     font-family: var(--font-body);
+    font-weight: bold;
+}
+
+.main-sobre h2 {
+    font-family: var(--font-title);
+    font-size: 2rem; /* mobile */
+    margin-bottom: 15px;
+}
+
+.main-sobre h4 {
+    font-family: var(--font-subtitle);
+    font-size: 1.5rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.main-sobre p {
+    font-family: var(--font-body);
+    font-size: 1rem; /* mobile */
+    line-height: 1.6;
+    color: var(--branco);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+}
+
+
+/* ===========================
+   TEXTO PADRÃO
+   =========================== */
+p, li, span {
+    font-family: var(--font-body);
+    font-size: 1.5rem;
+    color: var(--preto);
+}
+/* Listas de ex-integrantes */
+.lista-integrantes li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
     color: var(--amarelo-dourado);
 }
 
-/* PARÁGRAFOS */
-p, li, span {
-    font-family: var(--font-body);
-    font-size: 1rem;
-    color: var(--preto);
-}
-
-/* CARDS DE ÁLBUNS */
+/* ===========================
+   CARDS DE ÁLBUNS
+   =========================== */
 .card-album {
     background-color: var(--cinza-medio);
     color: var(--branco);
@@ -181,6 +366,7 @@ p, li, span {
     overflow: hidden;
     margin: 15px 0;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: var(--font-body);
 }
 
 .card-album img {
@@ -194,6 +380,7 @@ p, li, span {
 
 .card-album-body h3 {
     color: var(--amarelo-dourado);
+    font-family: var(--font-subtitle);
     margin-bottom: 10px;
 }
 
@@ -206,7 +393,20 @@ p, li, span {
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* SEÇÃO DE TOUR */
+.integrante-card {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.integrante-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+/* ===========================
+   SEÇÃO DE TOUR
+   =========================== */
 .tour-item {
     background-color: var(--roxo-escuro);
     color: var(--branco);
@@ -214,6 +414,7 @@ p, li, span {
     border-radius: 8px;
     margin: 10px 0;
     transition: background-color 0.3s ease;
+    font-family: var(--font-body);
 }
 
 .tour-item:hover {
@@ -221,13 +422,16 @@ p, li, span {
     color: var(--branco);
 }
 
-/* FORMULÁRIO DE CONTACTO */
+/* ===========================
+   FORMULÁRIO DE CONTACTO
+   =========================== */
 form.contact-form {
     background-color: var(--cinza-medio);
     padding: 20px;
     border-radius: 8px;
     max-width: 600px;
     margin: 0 auto 30px auto;
+    font-family: var(--font-body);
 }
 
 form.contact-form input,
@@ -239,18 +443,29 @@ form.contact-form textarea {
     border: 1px solid var(--branco);
     background-color: var(--branco);
     color: var(--preto);
+    font-family: var(--font-body);
 }
 
 form.contact-form button {
     width: 100%;
 }
 
-/* FOOTER */
+/* ===========================
+   FOOTER
+   =========================== */
 footer {
     background-color: var(--azul-noite);
     color: var(--branco);
     text-align: center;
-    padding: 20px 0;
+    padding: 5px 0;
+    font-family: var(--font-body);
+}
+
+/* Texto do footer */
+.p-footer {
+    font-size: 0.8rem;   /* levemente menor que o padrão */
+    margin-bottom: 10px;
+    color: var(--branco);
 }
 
 footer a {
@@ -263,9 +478,10 @@ footer a:hover {
     color: var(--laranja-queimado);
 }
 
-/* ÍCONES DE REDES SOCIAIS */
+/* ÍCONES FONT AWESOME */
 footer i {
-    font-size: 1.5rem;
+    font-size: 2 rem;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 /* Cores oficiais das redes sociais */
@@ -274,9 +490,9 @@ footer i {
 .fa-x-twitter { color: #000000; }
 .fa-youtube { color: #ff0000; }
 
-/* Efeito hover para destacar */
+/* Efeito hover para ícones */
 footer a:hover i {
     opacity: 0.7;
     transform: scale(1.1);
-    transition: all 0.3s ease-in-out;
 }
+

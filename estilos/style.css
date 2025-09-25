@@ -48,7 +48,10 @@ body {
     background-color: var(--branco);
 }
 
-/* ==== HEADER COM BACKGROUND POR PÁGINA ==== */
+/* ===========================
+   HEADER
+   =========================== */
+/* HEADER COM BACKGROUND POR PÁGINA */
 header {
     color: var(--branco);
     text-align: center;
@@ -99,7 +102,6 @@ header::before {
     z-index: 1;
 }
 
-
 /* ===========================
    NAVBAR
    =========================== */
@@ -114,6 +116,7 @@ header::before {
     font-weight: bold;
     font-family: var(--font-title);
     letter-spacing: 2px;
+    font-size: 1.5rem; /* padrão mobile */
 }
 
 .navbar .nav-link {
@@ -162,8 +165,7 @@ main {
     background-repeat: no-repeat;
     color: var(--branco);
     position: relative;
-    padding: 80px 20px;
-    /* centraliza o conteúdo */
+      /* centraliza o conteúdo */
     display: flex;
     align-items: center;   /* centraliza vertical */
     justify-content: center; /* centraliza horizontal */
@@ -188,6 +190,42 @@ main {
     z-index: 2;
 }
 
+.main-home p {
+    color: var(--branco);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* MAIN com imagem de fundo - Sobre */
+.main-sobre {
+    background-image: url("../imagens/bg-main-sobre.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    color: var(--branco);
+}
+
+.main-sobre::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(28,28,28,0.6);
+    z-index: 1;
+}
+
+.main-sobre > * {
+    position: relative;
+    z-index: 2;
+}
 /* ===========================
    SEÇÕES SECUNDÁRIAS
    =========================== */
@@ -231,6 +269,7 @@ a {
 
 a:hover {
     color: var(--vermelho-vibrante);
+    text-decoration: underline;
 }
 
 /* ===========================
@@ -264,6 +303,33 @@ h4, h5, h6 {
     font-weight: bold;
 }
 
+.main-sobre h2 {
+    font-family: var(--font-title);
+    font-size: 2rem; /* mobile */
+    margin-bottom: 15px;
+}
+
+.main-sobre h4 {
+    font-family: var(--font-subtitle);
+    font-size: 1.5rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.main-sobre p {
+    font-family: var(--font-body);
+    font-size: 1rem; /* mobile */
+    line-height: 1.6;
+    color: var(--branco);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+}
+
+/* h4 Ex-Integrantes em vermelho vibrante */
+h4.mt-5 {
+    color:var(--amarelo-dourado)!important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
 /* ===========================
    TEXTO PADRÃO
    =========================== */
@@ -271,6 +337,13 @@ p, li, span {
     font-family: var(--font-body);
     font-size: 1.5rem;
     color: var(--preto);
+}
+/* Listas de ex-integrantes */
+.lista-integrantes li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: var(--branco);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 /* ===========================
@@ -284,15 +357,35 @@ p, li, span {
     margin: 15px 0;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     font-family: var(--font-body);
+    height: 100%; /* garante mesma altura */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .card-album img {
     width: 100%;
+    height: 250px;
+    object-fit: cover;
     display: block;
 }
 
-.card-album-body {
+.card-album-body,
+.card-body {
     padding: 15px;
+}
+
+/* Títulos dos cards */
+.card-title {
+    color: var(--amarelo-dourado); /* cor pedida */
+    font-weight: bold;
+}
+
+/* Hover efeito */
+.card-album:hover,
+.integrante-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .card-album-body h3 {
@@ -308,6 +401,42 @@ p, li, span {
 .card-album:hover {
     transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.integrante-card {
+    background-color: var(--azul-noite);
+    color: var(--branco);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 15px 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: var(--font-body);
+
+    /*equalizar altura */
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+}    
+
+.integrante-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Solução 1: força alinhamento interno */
+.integrante-card .card-body {
+    flex: 1;
+    min-height: 120px; /* ajusta se precisar mais espaço */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.integrante-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
 }
 
 /* ===========================
@@ -367,9 +496,8 @@ footer {
     font-family: var(--font-body);
 }
 
-/* Texto do footer */
 .p-footer {
-    font-size: 0.8rem;   /* levemente menor que o padrão */
+    font-size: 0.8rem;
     margin-bottom: 10px;
     color: var(--branco);
 }
@@ -384,19 +512,16 @@ footer a:hover {
     color: var(--laranja-queimado);
 }
 
-/* ÍCONES FONT AWESOME */
 footer i {
-    font-size: 2 rem;
+    font-size: 2rem; /* corrigido */
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Cores oficiais das redes sociais */
 .fa-facebook { color: #1877f2; }
 .fa-instagram { color: #e4405f; }
 .fa-x-twitter { color: #000000; }
 .fa-youtube { color: #ff0000; }
 
-/* Efeito hover para ícones */
 footer a:hover i {
     opacity: 0.7;
     transform: scale(1.1);

@@ -14,3 +14,30 @@
         font-size: 1rem;
     }
 }
+
+/* Tablet (≥ 768px) */
+@media (min-width: 768px) {
+    .navbar .navbar-brand {
+        font-size: 1.8rem;
+    }
+}
+
+/* Desktop (≥ 1024px) */
+@media (min-width: 1024px) {
+    .navbar .navbar-brand {
+        font-size: 2rem;
+    }
+}
+/* Tablet */
+@media (min-width: 768px) {
+    .main-sobre h2 { font-size: 2.5rem; }
+    .main-sobre h4 { font-size: 1.75rem; }
+    .main-sobre p { font-size: 1.1rem; }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .main-sobre h2 { font-size: 3rem; }
+    .main-sobre h4 { font-size: 2rem; }
+    .main-sobre p { font-size: 1.2rem; }
+}
