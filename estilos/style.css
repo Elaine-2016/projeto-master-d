@@ -106,28 +106,33 @@ header::before {
    NAVBAR
    =========================== */
 .navbar {
-    background-color: var(--azul-noite) !important;
+    background-color: var(--azul-noite);
     padding: 10px 0;
     font-family: var(--font-subtitle);
 }
 
 .navbar .navbar-brand {
-    color: var(--amarelo-dourado) !important;
+    color: var(--amarelo-dourado);
     font-weight: bold;
     font-family: var(--font-title);
     letter-spacing: 2px;
+    transition: color 0.3s ease;
     font-size: 1.5rem; /* padrão mobile */
 }
 
+.navbar .navbar-brand:hover {
+    color: var(--laranja-queimado); /* ou outra cor */
+    text-decoration: none; /* se não quiser underline */
+}
 .navbar .nav-link {
-    color: var(--branco) !important;
+    color: var(--branco) ;
     margin: 0 10px;
     transition: color 0.3s ease;
 }
 
 .navbar .nav-link:hover,
 .navbar .nav-link.active {
-    color: var(--laranja-queimado) !important;
+    color: var(--laranja-queimado);
 }
 
 /* FORMULÁRIO DE PESQUISA */
@@ -492,12 +497,12 @@ footer {
     background-color: var(--azul-noite);
     color: var(--branco);
     text-align: center;
-    padding: 5px 0;
     font-family: var(--font-body);
 }
 
+/* Texto do footer */
 .p-footer {
-    font-size: 0.8rem;
+    font-size: 0.8rem;   /* levemente menor que o padrão */
     margin-bottom: 10px;
     color: var(--branco);
 }
@@ -512,17 +517,21 @@ footer a:hover {
     color: var(--laranja-queimado);
 }
 
+/* ÍCONES FONT AWESOME */
 footer i {
-    font-size: 2rem; /* corrigido */
+    font-size: 2rem;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+/* Cores oficiais das redes sociais */
 .fa-facebook { color: #1877f2; }
 .fa-instagram { color: #e4405f; }
 .fa-x-twitter { color: #000000; }
 .fa-youtube { color: #ff0000; }
 
+/* Efeito hover para ícones */
 footer a:hover i {
     opacity: 0.7;
     transform: scale(1.1);
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
