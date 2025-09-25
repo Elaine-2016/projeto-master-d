@@ -48,19 +48,57 @@ body {
     background-color: var(--branco);
 }
 
-/* ===========================
-   HEADER
-   =========================== */
+/* ==== HEADER COM BACKGROUND POR PÁGINA ==== */
 header {
-    background-color: var(--roxo-escuro);
-    padding: 15px 0;
+    color: var(--branco);
     text-align: center;
+    padding: 40px 0;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-header .logo {
-    max-width: 200px;
-    height: auto;
+/* Fundo específico para cada página */
+.pagina-index header {
+    background-image: url("../imagens/plano\ de\ fundo.jpg");
 }
+
+.pagina-sobre header {
+    background-image: url("imagens/bg-sobre.jpg");
+}
+
+.pagina-albuns header {
+    background-image: url("imagens/bg-albuns.jpg");
+}
+
+.pagina-tours header {
+    background-image: url("imagens/bg-tours.jpg");
+}
+
+.pagina-contatos header {
+    background-image: url("imagens/bg-contatos.jpg");
+}
+
+/* Ajuste da logo dentro do header */
+header .logo {
+    position: relative;
+    z-index: 2;
+    max-width: 200px;
+}
+
+/* Overlay para melhorar contraste */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(28, 28, 28, 0.55); /* leve sobreposição */
+    z-index: 1;
+}
+
 
 /* ===========================
    NAVBAR
