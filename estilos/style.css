@@ -61,23 +61,23 @@ header {
 
 /* Fundo específico para cada página */
 .pagina-index header {
-    background-image: url("../imagens/plano\ de\ fundo.jpg");
+    background-image: url("../imagens/bg-index.jpg");
 }
 
 .pagina-sobre header {
-    background-image: url("imagens/bg-sobre.jpg");
+    background-image: url("../imagens/bg-sobre.jpg");
 }
 
 .pagina-albuns header {
-    background-image: url("imagens/bg-albuns.jpg");
+    background-image: url("../imagens/bg-albuns.jpg");
 }
 
 .pagina-tours header {
-    background-image: url("imagens/bg-tours.jpg");
+    background-image: url("../imagens/bg-tours.jpg");
 }
 
 .pagina-contatos header {
-    background-image: url("imagens/bg-contatos.jpg");
+    background-image: url("../imagens/bg-contatos.jpg");
 }
 
 /* Ajuste da logo dentro do header */
@@ -151,6 +151,41 @@ header::before {
    =========================== */
 main {
     padding: 40px 20px;
+    min-height: 100vh;
+}
+
+/* MAIN com imagem de fundo - Home */
+.main-home {
+    background-image: url("../imagens/bg-main-index02.jpg"); /* troque pelo nome da sua imagem */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--branco);
+    position: relative;
+    padding: 80px 20px;
+    /* centraliza o conteúdo */
+    display: flex;
+    align-items: center;   /* centraliza vertical */
+    justify-content: center; /* centraliza horizontal */
+    text-align: center;
+    padding: 20px;
+}
+/* Overlay para garantir contraste */
+.main-home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(28, 28, 28, 0.6); /* sobreposição escura */
+    z-index: 1;
+}
+
+/* Garante que o texto fique acima do overlay */
+.main-home .container {
+    position: relative;
+    z-index: 2;
 }
 
 /* ===========================
@@ -234,7 +269,7 @@ h4, h5, h6 {
    =========================== */
 p, li, span {
     font-family: var(--font-body);
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: var(--preto);
 }
 
@@ -328,8 +363,15 @@ footer {
     background-color: var(--azul-noite);
     color: var(--branco);
     text-align: center;
-    padding: 20px 0;
+    padding: 5px 0;
     font-family: var(--font-body);
+}
+
+/* Texto do footer */
+.p-footer {
+    font-size: 0.8rem;   /* levemente menor que o padrão */
+    margin-bottom: 10px;
+    color: var(--branco);
 }
 
 footer a {
@@ -344,7 +386,7 @@ footer a:hover {
 
 /* ÍCONES FONT AWESOME */
 footer i {
-    font-size: 1.5rem;
+    font-size: 2 rem;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 

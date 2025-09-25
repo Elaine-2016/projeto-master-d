@@ -1,0 +1,16 @@
+@charset "UTF-8"; 
+
+/* Texto do footer*/
+/* Tablet (≥ 768px) */
+@media (min-width: 768px) {
+    .p-footer {
+        font-size: 0.9rem;
+    }
+}
+
+/* Desktop (≥ 1024px) */
+@media (min-width: 1024px) {
+    .p-footer {
+        font-size: 1rem;
+    }
+}
