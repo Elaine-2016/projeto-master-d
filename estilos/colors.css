@@ -496,3 +496,659 @@ footer a:hover i {
     transform: scale(1.1);
 }
 
+/*depois de atualizar o Tour*/
+@charset "UTF-8"; 
+
+/* ===========================
+   Importando fontes do Google Fonts
+   =========================== */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); /* Para títulos grandes, destaque */
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap'); /* Para subtítulos ou headings médios */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap'); /* Para texto normal e parágrafos */
+
+/* ===========================
+   Paleta de cores
+   =========================== */
+:root {
+    --laranja-queimado: #E85A2C;
+    --vermelho-vibrante: #D93A2B;
+    --amarelo-dourado: #F5B932;
+
+    --roxo-escuro: #3C1F5C;
+    --azul-noite: #1D2C59;
+    --cinza-medio: #777777;
+
+    --preto: #000000;
+    --branco: #FFFFFF;
+
+    /* Padrão tipográfico */
+    --font-title: 'Bebas Neue', cursive;
+    --font-subtitle: 'Passion One', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+/* ===========================
+   RESET BÁSICO
+   =========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===========================
+   BODY
+   =========================== */
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--preto);
+    background-color: var(--branco);
+}
+
+/* ===========================
+   HEADER
+   =========================== */
+/* HEADER COM BACKGROUND POR PÁGINA */
+header {
+    color: var(--branco);
+    text-align: center;
+    padding: 40px 0;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Fundo específico para cada página */
+.pagina-index header {
+    background-image: url("../imagens/bg-index.jpg");
+}
+
+.pagina-sobre header {
+    background-image: url("../imagens/bg-sobre.jpg");
+}
+
+.pagina-albuns header {
+    background-image: url("../imagens/bg-albuns.jpg");
+}
+
+.pagina-tours header {
+    background-image: url("../imagens/bg-tours.jpg");
+}
+
+.pagina-contatos header {
+    background-image: url("../imagens/bg-contatos.jpg");
+}
+
+/* Ajuste da logo dentro do header */
+header .logo {
+    position: relative;
+    z-index: 2;
+    max-width: 200px;
+}
+
+/* Overlay para melhorar contraste */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(28, 28, 28, 0.55); /* leve sobreposição */
+    z-index: 1;
+}
+
+/* ===========================
+   NAVBAR
+   =========================== */
+.navbar {
+    background-color: var(--azul-noite);
+    padding: 10px 0;
+    font-family: var(--font-subtitle);
+}
+
+.navbar .navbar-brand {
+    color: var(--amarelo-dourado);
+    font-weight: bold;
+    font-family: var(--font-title);
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+    font-size: 1.5rem; /* padrão mobile */
+}
+
+.navbar .navbar-brand:hover {
+    color: var(--laranja-queimado); /* ou outra cor */
+    text-decoration: none; /* se não quiser underline */
+}
+.navbar .nav-link {
+    color: var(--branco) ;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--laranja-queimado);
+}
+
+/* FORMULÁRIO DE PESQUISA */
+.navbar .form-control {
+    border-radius: 4px;
+    font-family: var(--font-body);
+}
+
+.navbar .btn-outline-success {
+    border-color: var(--laranja-queimado);
+    color: var(--laranja-queimado);
+    font-family: var(--font-subtitle);
+    transition: all 0.3s ease;
+}
+
+.navbar .btn-outline-success:hover {
+    background-color: var(--laranja-queimado);
+    color: var(--branco);
+    border-color: var(--vermelho-vibrante);
+}
+
+/* ===========================
+   MAIN
+   =========================== */
+main {
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+/* MAIN com imagem de fundo - Home */
+.main-home {
+    background-image: url("../imagens/bg-main-index02.jpg"); /* troque pelo nome da sua imagem */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--branco);
+    position: relative;
+      /* centraliza o conteúdo */
+    display: flex;
+    align-items: center;   /* centraliza vertical */
+    justify-content: center; /* centraliza horizontal */
+    text-align: center;
+    padding: 20px;
+}
+/* Overlay para garantir contraste */
+.main-home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(28, 28, 28, 0.6); /* sobreposição escura */
+    z-index: 1;
+}
+
+/* Garante que o texto fique acima do overlay */
+.main-home .container {
+    position: relative;
+    z-index: 2;
+}
+
+.main-home p {
+    color: var(--branco);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* MAIN com imagem de fundo - Sobre */
+.main-sobre {
+    background-image: url("../imagens/bg-main-sobre.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    color: var(--branco);
+}
+
+.main-sobre::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(28,28,28,0.6);
+    z-index: 1;
+}
+
+.main-sobre > * {
+    position: relative;
+    z-index: 2;
+}
+/* MAIN com imagem de fundo - Tours */
+.tabela-container {
+    width: 100%;
+    max-width: 900px;     /* largura máxima em desktops */
+    margin: 0 auto;       /* centraliza horizontal */
+    padding: 20px;
+    text-align: center;   /* centraliza texto e H1 */
+}
+/* Garante que o main centralize verticalmente */
+.pagina-tours main {
+    display: flex;
+    justify-content: center; /* centraliza vertical */
+    align-items: center;     /* centraliza horizontal */
+    min-height: 80vh;        /* ocupa boa parte da tela */
+}
+
+/* Ajuste da tabela */
+.table {
+    width: 100%;        /* ocupa largura total no mobile */
+    max-width: 800px;   /* limita em telas grandes */
+    margin: 20px auto;  /* centraliza e dá espaço do H1 */
+    border-collapse: collapse;
+}
+/* Tabela base */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto; /* Permite scroll horizontal em telas pequenas */
+    display: block;
+}
+/* Cabeçalho */
+.table th {
+    background-color:var(--azul-noite); 
+    color:var(--amarelo-dourado);
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 0.8rem;
+}
+
+/* Células da tabela */
+.table td {
+    padding: 0.8rem;
+    text-align: center;
+    transition: all 0.3s ease; /* Suaviza hover */
+}
+
+/* Linhas alternadas para melhor leitura */
+.table tbody tr:nth-child(even) {
+    background-color: #F3F4F6; /* Cinza claro */
+}
+
+/* ===========================
+   SEÇÕES SECUNDÁRIAS
+   =========================== */
+.section-secondary {
+    background-color: var(--cinza-medio);
+    color: var(--branco);
+    padding: 30px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-family: var(--font-body);
+}
+
+/* ===========================
+   BOTÕES
+   =========================== */
+button, .btn-primary {
+    background-color: var(--laranja-queimado);
+    color: var(--branco);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--font-subtitle);
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .btn-primary:hover {
+    background-color: var(--vermelho-vibrante);
+}
+
+/* ===========================
+   LINKS
+   =========================== */
+a {
+    font-family: var(--font-body);
+    color: var(--laranja-queimado);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--vermelho-vibrante);
+    text-decoration: underline;
+}
+
+/* ===========================
+   HEADINGS
+   =========================== */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--amarelo-dourado);
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-family: var(--font-title);
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-family: var(--font-subtitle);
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-family: var(--font-subtitle);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+h4, h5, h6 {
+    font-family: var(--font-body);
+    font-weight: bold;
+}
+
+.main-sobre h2 {
+    font-family: var(--font-title);
+    font-size: 2rem; /* mobile */
+    margin-bottom: 15px;
+}
+
+.main-sobre h4 {
+    font-family: var(--font-subtitle);
+    font-size: 1.5rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.main-sobre p {
+    font-family: var(--font-body);
+    font-size: 1rem; /* mobile */
+    line-height: 1.6;
+    color: var(--branco);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+}
+
+/* h4 Ex-Integrantes em vermelho vibrante */
+h4.mt-5 {
+    color:var(--amarelo-dourado)!important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* ===========================
+   TEXTO PADRÃO
+   =========================== */
+p, li, span {
+    font-family: var(--font-body);
+    font-size: 1.5rem;
+    color: var(--preto);
+}
+/* Listas de ex-integrantes */
+.lista-integrantes li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: var(--branco);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* ===========================
+   CARDS DE ÁLBUNS
+   =========================== */
+.card-album {
+    background-color: var(--cinza-medio);
+    color: var(--branco);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 15px 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: var(--font-body);
+    height: 100%; /* garante mesma altura */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-album img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-album-body,
+.card-body {
+    padding: 15px;
+}
+
+/* Títulos dos cards */
+.card-title {
+    color: var(--amarelo-dourado); /* cor pedida */
+    font-weight: bold;
+}
+
+/* Hover efeito */
+.card-album:hover,
+.integrante-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.card-album-body h3 {
+    color: var(--amarelo-dourado);
+    font-family: var(--font-subtitle);
+    margin-bottom: 10px;
+}
+
+.card-album-body p {
+    color: var(--branco);
+}
+
+.card-album:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.integrante-card {
+    background-color: var(--azul-noite);
+    color: var(--branco);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 15px 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: var(--font-body);
+
+    /*equalizar altura */
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+}    
+
+.integrante-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Solução 1: força alinhamento interno */
+.integrante-card .card-body {
+    flex: 1;
+    min-height: 120px; /* ajusta se precisar mais espaço */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.integrante-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+/* ===========================
+   SEÇÃO DE TOUR
+   =========================== */
+.tour-item {
+    background-color: var(--roxo-escuro);
+    color: var(--branco);
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px 0;
+    transition: background-color 0.3s ease;
+    font-family: var(--font-body);
+}
+
+.tour-item:hover {
+    background-color: var(--laranja-queimado);
+    color: var(--branco);
+}
+
+/* ===========================
+   FORMULÁRIO DE CONTACTO
+   =========================== */
+form.contact-form {
+    background-color: var(--cinza-medio);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    font-family: var(--font-body);
+}
+
+form.contact-form input,
+form.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid var(--branco);
+    background-color: var(--branco);
+    color: var(--preto);
+    font-family: var(--font-body);
+}
+
+form.contact-form button {
+    width: 100%;
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+footer {
+    background-color: var(--azul-noite);
+    color: var(--branco);
+    text-align: center;
+    font-family: var(--font-body);
+}
+
+/* Texto do footer */
+.p-footer {
+    font-size: 0.8rem;   /* levemente menor que o padrão */
+    margin-bottom: 10px;
+    color: var(--branco);
+}
+
+footer a {
+    color: var(--amarelo-dourado);
+    margin: 0 5px;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--laranja-queimado);
+}
+
+/* ÍCONES FONT AWESOME */
+footer i {
+    font-size: 2rem;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Cores oficiais das redes sociais */
+.fa-facebook { color: #1877f2; }
+.fa-instagram { color: #e4405f; }
+.fa-x-twitter { color: #000000; }
+.fa-youtube { color: #ff0000; }
+
+/* Efeito hover para ícones */
+footer a:hover i {
+    opacity: 0.7;
+    transform: scale(1.1);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+ /*MIDIA-QUERY*/
+ @charset "UTF-8"; 
+
+/* Texto do footer*/
+/* Tablet (≥ 768px) */
+@media (min-width: 768px) {
+    .p-footer {
+        font-size: 0.9rem;
+    }
+}
+
+/* Desktop (≥ 1024px) */
+@media (min-width: 1024px) {
+    .p-footer {
+        font-size: 1rem;
+    }
+}
+
+/* Tablet (≥ 768px) */
+@media (min-width: 768px) {
+    .navbar .navbar-brand {
+        font-size: 1.8rem;
+    }
+}
+
+/* Desktop (≥ 1024px) */
+@media (min-width: 1024px) {
+    .navbar .navbar-brand {
+        font-size: 2rem;
+    }
+}
+/* Tablet */
+@media (min-width: 768px) {
+    .main-sobre h2 { font-size: 2.5rem; }
+    .main-sobre h4 { font-size: 1.75rem; }
+    .main-sobre p { font-size: 1.1rem; }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .main-sobre h2 { font-size: 3rem; }
+    .main-sobre h4 { font-size: 2rem; }
+    .main-sobre p { font-size: 1.2rem; }
+}
+
+/* Scroll horizontal no mobile */
+@media (max-width: 768px) {
+    .table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .table th,
+    .table td {
+        font-size: 0.95rem;
+        padding: 0.6rem;
+    }
+}
+@media (min-width: 768px) {
+    .tabela-container {
+        padding: 40px;
+    }
+    .table th, .table td {
+        font-size: 1.1rem;
+    }
+}

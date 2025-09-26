@@ -1,43 +1,43 @@
-@charset "UTF-8"; 
+@charset "UTF-8";
 
-/* Texto do footer*/
-/* Tablet (≥ 768px) */
+/* ===========================
+   MEDIA QUERIES
+   =========================== */
+
+/* Tablet (≥768px) */
 @media (min-width: 768px) {
-    .p-footer {
-        font-size: 0.9rem;
-    }
-}
+    .p-footer { font-size: 0.9rem; }
+    .navbar .navbar-brand { font-size: 1.8rem; }
 
-/* Desktop (≥ 1024px) */
-@media (min-width: 1024px) {
-    .p-footer {
-        font-size: 1rem;
-    }
-}
-
-/* Tablet (≥ 768px) */
-@media (min-width: 768px) {
-    .navbar .navbar-brand {
-        font-size: 1.8rem;
-    }
-}
-
-/* Desktop (≥ 1024px) */
-@media (min-width: 1024px) {
-    .navbar .navbar-brand {
-        font-size: 2rem;
-    }
-}
-/* Tablet */
-@media (min-width: 768px) {
     .main-sobre h2 { font-size: 2.5rem; }
     .main-sobre h4 { font-size: 1.75rem; }
     .main-sobre p { font-size: 1.1rem; }
+
+    .tabela-container { padding: 40px; }
+    .table th, .table td { font-size: 1.1rem; }
 }
 
-/* Desktop */
+/* Desktop (≥1024px) */
 @media (min-width: 1024px) {
+    .p-footer { font-size: 1rem; }
+    .navbar .navbar-brand { font-size: 2rem; }
+
     .main-sobre h2 { font-size: 3rem; }
     .main-sobre h4 { font-size: 2rem; }
     .main-sobre p { font-size: 1.2rem; }
+}
+
+/* Mobile ajuste para tabela */
+@media (max-width: 768px) {
+    .table th, .table td {
+        font-size: 0.95rem;
+        padding: 0.6rem;
+    }
+}
+/* Ajuste em telas menores */
+@media (max-width: 576px) {
+    .card-album img,
+    .integrante-card img {
+        height: 200px; /* reduz altura em mobile */
+    }
 }

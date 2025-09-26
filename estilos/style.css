@@ -1,11 +1,11 @@
-@charset "UTF-8"; 
+@charset "UTF-8";
 
 /* ===========================
    Importando fontes do Google Fonts
    =========================== */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); /* Para títulos grandes, destaque */
-@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap'); /* Para subtítulos ou headings médios */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap'); /* Para texto normal e parágrafos */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 /* ===========================
    Paleta de cores
@@ -18,18 +18,18 @@
     --roxo-escuro: #3C1F5C;
     --azul-noite: #1D2C59;
     --cinza-medio: #777777;
+    --cinza-claro: #F3F4F6;
 
     --preto: #000000;
     --branco: #FFFFFF;
 
-    /* Padrão tipográfico */
     --font-title: 'Bebas Neue', cursive;
     --font-subtitle: 'Passion One', sans-serif;
     --font-body: 'Roboto', sans-serif;
 }
 
 /* ===========================
-   RESET BÁSICO
+   RESET
    =========================== */
 * {
     margin: 0;
@@ -49,9 +49,28 @@ body {
 }
 
 /* ===========================
+   IMAGENS RESPONSIVAS
+   =========================== */
+
+/* Todas as imagens se adaptam sem distorcer */
+img {
+    max-width: 100%;
+    height: auto;       /* mantém proporção */
+    display: block;
+}
+
+/* Logo no header */
+header .logo {
+    max-width: 180px;   /* ajusta em telas pequenas */
+    height: auto;
+    margin: 0 auto;
+}
+
+
+
+/* ===========================
    HEADER
    =========================== */
-/* HEADER COM BACKGROUND POR PÁGINA */
 header {
     color: var(--branco);
     text-align: center;
@@ -62,52 +81,33 @@ header {
     background-repeat: no-repeat;
 }
 
-/* Fundo específico para cada página */
-.pagina-index header {
-    background-image: url("../imagens/bg-index.jpg");
-}
-
-.pagina-sobre header {
-    background-image: url("../imagens/bg-sobre.jpg");
-}
-
-.pagina-albuns header {
-    background-image: url("../imagens/bg-albuns.jpg");
-}
-
-.pagina-tours header {
-    background-image: url("../imagens/bg-tours.jpg");
-}
-
-.pagina-contatos header {
-    background-image: url("../imagens/bg-contatos.jpg");
-}
-
-/* Ajuste da logo dentro do header */
 header .logo {
     position: relative;
     z-index: 2;
     max-width: 200px;
 }
 
-/* Overlay para melhorar contraste */
+/* Overlay escuro */
 header::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(28, 28, 28, 0.55); /* leve sobreposição */
+    inset: 0;
+    background: rgba(28, 28, 28, 0.55);
     z-index: 1;
 }
+
+/* Fundos específicos */
+.pagina-index header { background-image: url("../imagens/bg-index.jpg"); }
+.pagina-sobre header { background-image: url("../imagens/bg-sobre.jpg"); }
+.pagina-albuns header { background-image: url("../imagens/bg-albuns.jpg"); }
+.pagina-tours header { background-image: url("../imagens/bg-tours.jpg"); }
+.pagina-contatos header { background-image: url("../imagens/bg-contatos.jpg"); }
 
 /* ===========================
    NAVBAR
    =========================== */
 .navbar {
     background-color: var(--azul-noite);
-    padding: 10px 0;
     font-family: var(--font-subtitle);
 }
 
@@ -117,15 +117,16 @@ header::before {
     font-family: var(--font-title);
     letter-spacing: 2px;
     transition: color 0.3s ease;
-    font-size: 1.5rem; /* padrão mobile */
+    font-size: 1.5rem;
 }
 
 .navbar .navbar-brand:hover {
-    color: var(--laranja-queimado); /* ou outra cor */
-    text-decoration: none; /* se não quiser underline */
+    color: var(--laranja-queimado);
+    text-decoration: none;
 }
+
 .navbar .nav-link {
-    color: var(--branco) ;
+    color: var(--branco);
     margin: 0 10px;
     transition: color 0.3s ease;
 }
@@ -133,12 +134,6 @@ header::before {
 .navbar .nav-link:hover,
 .navbar .nav-link.active {
     color: var(--laranja-queimado);
-}
-
-/* FORMULÁRIO DE PESQUISA */
-.navbar .form-control {
-    border-radius: 4px;
-    font-family: var(--font-body);
 }
 
 .navbar .btn-outline-success {
@@ -162,34 +157,28 @@ main {
     min-height: 100vh;
 }
 
-/* MAIN com imagem de fundo - Home */
+/* Home */
 .main-home {
-    background-image: url("../imagens/bg-main-index02.jpg"); /* troque pelo nome da sua imagem */
+    background-image: url("../imagens/bg-main-index02.jpg");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     color: var(--branco);
     position: relative;
-      /* centraliza o conteúdo */
     display: flex;
-    align-items: center;   /* centraliza vertical */
-    justify-content: center; /* centraliza horizontal */
+    align-items: center;
+    justify-content: center;
     text-align: center;
     padding: 20px;
 }
-/* Overlay para garantir contraste */
+
 .main-home::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(28, 28, 28, 0.6); /* sobreposição escura */
+    inset: 0;
+    background: rgba(28, 28, 28, 0.6);
     z-index: 1;
 }
 
-/* Garante que o texto fique acima do overlay */
 .main-home .container {
     position: relative;
     z-index: 2;
@@ -200,47 +189,79 @@ main {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-/* MAIN com imagem de fundo - Sobre */
+/* Sobre */
 .main-sobre {
     background-image: url("../imagens/bg-main-sobre.jpg");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 60px 20px;
-    text-align: center;
-    position: relative;
     color: var(--branco);
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
 }
 
 .main-sobre::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: rgba(28,28,28,0.6);
     z-index: 1;
 }
 
-.main-sobre > * {
+.main-sobre > * { position: relative; z-index: 2; }
+
+/* Tours */
+.tabela-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+/* MAIN com imagem de fundo - Tours */
+.main-tours {
+    background-image: url("../imagens/bg-main-tours.jpg"); /* troque pelo ficheiro da sua imagem */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--branco);
+    min-height: 100vh;
+    position: relative;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.main-tours::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(28, 28, 28, 0.6); /* overlay escuro */
+    z-index: 1;
+}
+
+.main-tours > * {
     position: relative;
     z-index: 2;
 }
+
+
 /* ===========================
-   SEÇÕES SECUNDÁRIAS
+   TABELAS
    =========================== */
-.section-secondary {
-    background-color: var(--cinza-medio);
-    color: var(--branco);
-    padding: 30px 20px;
-    border-radius: 8px;
-    margin: 20px 0;
-    font-family: var(--font-body);
+.table th {
+    background-color: var(--azul-noite);
+    color: var(--amarelo-dourado);
+    font-size: 1.1rem;
+    padding: 0.8rem;
+}
+
+.table td {
+    padding: 0.8rem;
+    text-align: center;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: var(--cinza-claro);
 }
 
 /* ===========================
@@ -266,7 +287,6 @@ button:hover, .btn-primary:hover {
    LINKS
    =========================== */
 a {
-    font-family: var(--font-body);
     color: var(--laranja-queimado);
     text-decoration: none;
     transition: color 0.3s ease;
@@ -280,7 +300,7 @@ a:hover {
 /* ===========================
    HEADINGS
    =========================== */
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
     color: var(--amarelo-dourado);
     margin-bottom: 15px;
 }
@@ -288,19 +308,16 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-family: var(--font-title);
     font-size: 3rem;
-    margin-bottom: 20px;
 }
 
 h2 {
     font-family: var(--font-subtitle);
     font-size: 2rem;
-    margin-bottom: 15px;
 }
 
 h3 {
     font-family: var(--font-subtitle);
     font-size: 1.5rem;
-    margin-bottom: 10px;
 }
 
 h4, h5, h6 {
@@ -308,102 +325,45 @@ h4, h5, h6 {
     font-weight: bold;
 }
 
-.main-sobre h2 {
-    font-family: var(--font-title);
-    font-size: 2rem; /* mobile */
-    margin-bottom: 15px;
-}
-
-.main-sobre h4 {
-    font-family: var(--font-subtitle);
-    font-size: 1.5rem;
-    margin-top: 30px;
-    margin-bottom: 15px;
-}
-
-.main-sobre p {
-    font-family: var(--font-body);
-    font-size: 1rem; /* mobile */
-    line-height: 1.6;
-    color: var(--branco);
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
-}
-
-/* h4 Ex-Integrantes em vermelho vibrante */
-h4.mt-5 {
-    color:var(--amarelo-dourado)!important;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
 /* ===========================
-   TEXTO PADRÃO
+   CARDS
    =========================== */
-p, li, span {
-    font-family: var(--font-body);
-    font-size: 1.5rem;
-    color: var(--preto);
-}
-/* Listas de ex-integrantes */
-.lista-integrantes li {
-    margin-bottom: 8px;
-    font-size: 0.95rem;
-    color: var(--branco);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-/* ===========================
-   CARDS DE ÁLBUNS
-   =========================== */
-.card-album {
-    background-color: var(--cinza-medio);
-    color: var(--branco);
+.card-album, .integrante-card {
     border-radius: 10px;
     overflow: hidden;
     margin: 15px 0;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    font-family: var(--font-body);
-    height: 100%; /* garante mesma altura */
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
-.card-album img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    display: block;
-}
-
-.card-album-body,
-.card-body {
-    padding: 15px;
-}
-
-/* Títulos dos cards */
-.card-title {
-    color: var(--amarelo-dourado); /* cor pedida */
-    font-weight: bold;
-}
-
-/* Hover efeito */
-.card-album:hover,
-.integrante-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-.card-album-body h3 {
-    color: var(--amarelo-dourado);
-    font-family: var(--font-subtitle);
-    margin-bottom: 10px;
-}
-
-.card-album-body p {
+.card-album {
+    background-color: var(--cinza-medio);
     color: var(--branco);
 }
 
-.card-album:hover {
+.card-album img, 
+.integrante-card img {
+    width: 100%;
+    height: 250px;        /* altura fixa */
+    object-fit: cover;    /* preenche sem distorcer */
+    object-position: center;
+    display: block;
+    border-radius: 0;     /* segue design clean */
+}
+
+.card-album-body, .card-body {
+    padding: 15px;
+    flex: 1;
+}
+
+.card-title {
+    color: var(--amarelo-dourado);
+    font-weight: bold;
+}
+
+.card-album:hover, .integrante-card:hover {
     transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
@@ -411,41 +371,10 @@ p, li, span {
 .integrante-card {
     background-color: var(--azul-noite);
     color: var(--branco);
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 15px 0;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    font-family: var(--font-body);
-
-    /*equalizar altura */
-    height: 100%; 
-    display: flex;
-    flex-direction: column;
-}    
-
-.integrante-card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    display: block;
-}
-
-/* Solução 1: força alinhamento interno */
-.integrante-card .card-body {
-    flex: 1;
-    min-height: 120px; /* ajusta se precisar mais espaço */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.integrante-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
 }
 
 /* ===========================
-   SEÇÃO DE TOUR
+   TOUR ITEM
    =========================== */
 .tour-item {
     background-color: var(--roxo-escuro);
@@ -454,16 +383,14 @@ p, li, span {
     border-radius: 8px;
     margin: 10px 0;
     transition: background-color 0.3s ease;
-    font-family: var(--font-body);
 }
 
 .tour-item:hover {
     background-color: var(--laranja-queimado);
-    color: var(--branco);
 }
 
 /* ===========================
-   FORMULÁRIO DE CONTACTO
+   FORMULÁRIO
    =========================== */
 form.contact-form {
     background-color: var(--cinza-medio);
@@ -471,7 +398,6 @@ form.contact-form {
     border-radius: 8px;
     max-width: 600px;
     margin: 0 auto 30px auto;
-    font-family: var(--font-body);
 }
 
 form.contact-form input,
@@ -483,11 +409,6 @@ form.contact-form textarea {
     border: 1px solid var(--branco);
     background-color: var(--branco);
     color: var(--preto);
-    font-family: var(--font-body);
-}
-
-form.contact-form button {
-    width: 100%;
 }
 
 /* ===========================
@@ -497,41 +418,32 @@ footer {
     background-color: var(--azul-noite);
     color: var(--branco);
     text-align: center;
-    font-family: var(--font-body);
 }
 
-/* Texto do footer */
 .p-footer {
-    font-size: 0.8rem;   /* levemente menor que o padrão */
+    font-size: 0.8rem;
     margin-bottom: 10px;
-    color: var(--branco);
 }
 
 footer a {
     color: var(--amarelo-dourado);
     margin: 0 5px;
-    transition: color 0.3s ease;
 }
 
-footer a:hover {
-    color: var(--laranja-queimado);
-}
+footer a:hover { color: var(--laranja-queimado); }
 
-/* ÍCONES FONT AWESOME */
 footer i {
     font-size: 2rem;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Cores oficiais das redes sociais */
+footer a:hover i {
+    opacity: 0.7;
+    transform: scale(1.1);
+}
+
+/* Redes sociais */
 .fa-facebook { color: #1877f2; }
 .fa-instagram { color: #e4405f; }
 .fa-x-twitter { color: #000000; }
 .fa-youtube { color: #ff0000; }
-
-/* Efeito hover para ícones */
-footer a:hover i {
-    opacity: 0.7;
-    transform: scale(1.1);
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
