@@ -349,6 +349,7 @@ h4, h5, h6 {
     object-position: center;
     display: block;
     border-radius: 0;     /* segue design clean */
+    background-position: top center;
 }
 
 .card-album-body, .card-body {
@@ -445,3 +446,5 @@ footer a:hover i {
 .fa-instagram { color: #e4405f; }
 .fa-x-twitter { color: #000000; }
 .fa-youtube { color: #ff0000; }
+
+
