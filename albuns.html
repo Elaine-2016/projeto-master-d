@@ -3,195 +3,170 @@
 <head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="banda, música, rock, álbuns, concertos">
-    <meta name="description" content="Explore a discografia completa da Banda Kid Abelha. Veja todos os álbuns e principais sucessos.">
+    <meta name="keywords" content="Kid Abelha, discografia, álbuns, Seu Espião, Fixação, Como Eu Quero, rock brasileiro">
+    <meta name="description" content="Explore a discografia completa da Banda Kid Abelha. Descubra todos os álbuns desde Seu Espião (1984) até Pega Vida (2005), incluindo clássicos como Fixação e Lágrimas e Chuva.">
     <meta name="author" content="Elaine Gonçalves">
     <link rel="shortcut icon" href="imagens/favicon.jpg" type="image/x-icon">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> 
 
-    <!-- Estilos base (Mobile First) -->
     <link rel="stylesheet" href="estilos/style.css" media="all">
     <link rel="stylesheet" href="estilos/media-query.css" media="all">
 
-    <title>Discografia - Kid Abelha</title>
+    <title>Discografia - Kid Abelha | Todos os Álbuns</title>
 </head>
 
 <body class="pagina-albuns">
-    <!-- HEADER --> 
     <header>
         <div class="container">
-            <img src="imagens/logo.jpg" alt="Logotipo Banda Kid Abelha" class="logo">
+            <img src="imagens/logo.jpg" alt="Logotipo oficial da Banda Kid Abelha, ícone do rock brasileiro dos anos 80" class="logo">
         </div>    
     </header>  
     
-    <!-- NAVBAR -->  
     <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Alternar navegação">
-            <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="#"> &#128029; KID ABELHA  </a>
+            <a class="navbar-brand" href="index.html" aria-label="Kid Abelha - Página inicial">&#128029; KID ABELHA</a>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html" target="_blank">Home</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="sobre.html" target="_blank">Sobre</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="albuns.html" target="_blank">Álbuns</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="tours.html" target="_blank">Tour</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="contactos.html" target="_blank">Contactos</a>
-                </li>
-            </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Procurar" aria-label="Procurar">
-                <button class="btn btn-outline-success" type="submit">Pesquisar</button>
-            </form>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobre.html">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="albuns.html">Álbuns</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tours.html">Tour</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contactos.html">Contactos</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>  
-    <!-- MAIN -->
-      <!-- MAIN -->
-    <main class="container-fluid py-5">        
+
+    <main class="container-fluid py-5">
+        <h1 class="text-center mb-5">Discografia Completa</h1>
+        
         <div class="row g-4">
-            <!-- Álbum 1 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="imagens/espião.jpg" class="card-img-top img-fluid" alt="Álbum Seu Espião">
+            <div class="col-12 col-sm-6 col-md-4">
+                <article class="card card-album">
+                    <img src="imagens/espião.jpg" class="card-img-top" alt="Capa do álbum Seu Espião da banda Kid Abelha, lançado em 1984, com os clássicos Fixação e Como Eu Quero" loading="lazy">
                     <div class="card-body">
-                        <h5 class="card-title">Seu Espião (1984)</h5>
+                        <h2 class="card-title">Seu Espião (1984)</h2>
                         <p class="card-text">Álbum de estreia com os clássicos "Fixação" e "Como Eu Quero".</p>
                     </div>
-                </div>
+                </article>
             </div>
-            <!-- Álbum 2 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="imagens/Educação Sentimental.jpg" class="card-img-top img-fluid" alt="Álbum Educação Sentimental">
+            <div class="col-12 col-sm-6 col-md-4">
+                <article class="card card-album">
+                    <img src="imagens/Educação-Sentimental.jpg" class="card-img-top" alt="Capa do álbum Educação Sentimental da Kid Abelha, lançado em 1985, incluindo o hit Lágrimas e Chuva" loading="lazy">
                     <div class="card-body">
-                        <h5 class="card-title">Educação Sentimental (1985)</h5>
+                        <h2 class="card-title">Educação Sentimental (1985)</h2>
                         <p class="card-text">Inclui sucessos como "Lágrimas e Chuva".</p>
                     </div>
-                </div>
+                </article>
             </div>
-            <!-- Álbum 3 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="imagens/Tomate.jpg" class="card-img-top img-fluid" alt="Álbum Tomate">
+            <div class="col-12 col-sm-6 col-md-4">
+                <article class="card card-album">
+                    <img src="imagens/Tomate.jpg" class="card-img-top" alt="Capa do álbum Tomate da Kid Abelha de 1987, consolidando o sucesso da banda no rock brasileiro" loading="lazy">
                     <div class="card-body">
-                        <h5 class="card-title">Tomate (1987)</h5>
+                        <h2 class="card-title">Tomate (1987)</h2>
                         <p class="card-text">Um disco que consolida o sucesso da banda no cenário do rock brasileiro.</p>
                     </div>
-                </div>
+                </article>
             </div>
-            <!-- Álbum 4 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="imagens/kid.jpg" class="card-img-top img-fluid" alt="Álbum Kid">
+            <div class="col-12 col-sm-6 col-md-4">
+                <article class="card card-album">
+                    <img src="imagens/kid.jpg" class="card-img-top" alt="Capa do álbum Kid de 1989 com as músicas Dizer Não É Dizer Sim e Agora Sei" loading="lazy">
                     <div class="card-body">
-                        <h5 class="card-title">Kid (1989)</h5>
+                        <h2 class="card-title">Kid (1989)</h2>
                         <p class="card-text">Álbum com as músicas "Dizer Não É Dizer Sim" e "Agora Sei".</p>
                     </div>
-                </div>
+                </article>
             </div>
-            <!-- Álbum 5 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="imagens/Tudo É Permitido.jpg" class="card-img-top img-fluid" alt="Álbum Tudo É Permitido">
+            <div class="col-12 col-sm-6 col-md-4">
+                <article class="card card-album">
+                    <img src="imagens/Tudo-É-Permitido.jpg" class="card-img-top" alt="Capa do álbum Tudo É Permitido da Kid Abelha lançado em 1991" loading="lazy">
                     <div class="card-body">
-                        <h5 class="card-title">Tudo É Permitido (1991)</h5>
+                        <h2 class="card-title">Tudo É Permitido (1991)</h2>
                         <p class="card-text">Um trabalho que mostra a evolução musical da banda.</p>
                     </div>
-                </div>
+                </article>
             </div>
-            <!-- Álbum 6 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="imagens/Iê Iê Iê.jpg" class="card-img-top img-fluid" alt="Álbum Iê Iê Iê">
+            <div class="col-12 col-sm-6 col-md-4">
+                <article class="card card-album">
+                    <img src="imagens/Iê-Iê-Iê.jpg" class="card-img-top" alt="Capa do álbum Iê Iê Iê da Kid Abelha de 1993 com novas sonoridades" loading="lazy">
                     <div class="card-body">
-                        <h5 class="card-title">Iê Iê Iê (1993)</h5>
+                        <h2 class="card-title">Iê Iê Iê (1993)</h2>
                         <p class="card-text">Um álbum que trouxe novas sonoridades e mantém a banda no auge.</p>
                     </div>
-                </div>
+                </article>
             </div>
-            <!-- Álbum 7 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="imagens/Meu Mundo Gira em Torno de Você.jpg" class="card-img-top img-fluid" alt="Álbum Meu Mundo Gira em Torno de Você">
+            <div class="col-12 col-sm-6 col-md-4">
+                <article class="card card-album">
+                    <img src="imagens/Meu-Mundo-Gira-em-Torno-de-Você.jpg" class="card-img-top" alt="Capa do álbum Meu Mundo Gira em Torno de Você da Kid Abelha lançado em 1996" loading="lazy">
                     <div class="card-body">
-                        <h5 class="card-title">Meu Mundo Gira em Torno de Você (1996)</h5>
+                        <h2 class="card-title">Meu Mundo Gira em Torno de Você (1996)</h2>
                         <p class="card-text">Um álbum que aborda temas de amor de forma mais madura.</p>
                     </div>
-                </div>
+                </article>
             </div>
-            <!-- Álbum 8 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="imagens/autolove.jpg" class="card-img-top img-fluid" alt="Álbum Autolove">
+            <div class="col-12 col-sm-6 col-md-4">
+                <article class="card card-album">
+                    <img src="imagens/autolove.jpg" class="card-img-top" alt="Capa do álbum Autolove da Kid Abelha de 1998 mostrando versatilidade musical" loading="lazy">
                     <div class="card-body">
-                        <h5 class="card-title">Autolove (1998)</h5>
+                        <h2 class="card-title">Autolove (1998)</h2>
                         <p class="card-text">Continua com o sucesso dos álbuns anteriores, mostrando a versatilidade da banda.</p>
                     </div>
-                </div>
+                </article>
             </div>
-            <!-- Álbum 9 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="imagens/Surf.jpg" class="card-img-top img-fluid" alt="Álbum Surf">
+            <div class="col-12 col-sm-6 col-md-4">
+                <article class="card card-album">
+                    <img src="imagens/Surf.jpg" class="card-img-top" alt="Capa do álbum Surf da Kid Abelha lançado em 2001 com influências de diversos estilos" loading="lazy">
                     <div class="card-body">
-                        <h5 class="card-title">Surf (2001)</h5>
+                        <h2 class="card-title">Surf (2001)</h2>
                         <p class="card-text">Um disco mais leve e com influências de outros estilos.</p>
                     </div>
-                </div>
+                </article>
             </div>
-            <!-- Álbum 10 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="imagens/Pega Vida.jpg" class="card-img-top img-fluid" alt="Álbum Pega Vida">
+            <div class="col-12 col-sm-6 col-md-4">
+                <article class="card card-album">
+                    <img src="imagens/Pega-Vida.jpg" class="card-img-top" alt="Capa do álbum Pega Vida de 2005, última produção de estúdio da banda Kid Abelha" loading="lazy">
                     <div class="card-body">
-                        <h5 class="card-title">Pega Vida (2005)</h5>
+                        <h2 class="card-title">Pega Vida (2005)</h2>
                         <p class="card-text">A última produção de estúdio da banda, que encerra essa trajetória.</p>
                     </div>
-                </div>
+                </article>
             </div>
-
         </div>
     </main>
 
-
-
-    <!-- FOOTER -->
-    <footer class="text-center py-1">
-        <!-- Direitos autorais -->
+    <footer class="text-center py-3">
         <p class="p-footer">&copy; 2025 Banda Kid Abelha - Todos os direitos reservados.</p>
-        <!-- Ícones das redes sociais -->
-        <a href="https://www.facebook.com/kidabelhanaooficial/" target="_blank">
-            <i class="fa-brands fa-facebook fa-lg mx-2"></i>
-        </a>
-        <a href="https://www.instagram.com/kidabelhaoficial/" target="_blank">
-            <i class="fa-brands fa-instagram fa-lg mx-2"></i>
-        </a>
-        <a href="https://x.com/kidabelha" target="_blank">
-            <i class="fa-brands fa-x-twitter fa-lg mx-2"></i>
-        </a>
-        <a href="https://www.youtube.com/user/kidabelhaoficial" target="_blank">
-            <i class="fa-brands fa-youtube fa-lg mx-2"></i>
-        </a>
+        <nav aria-label="Redes sociais da banda">
+            <a href="https://www.facebook.com/kidabelhanaooficial/" target="_blank" rel="noopener noreferrer" aria-label="Visite nossa página no Facebook">
+                <i class="fa-brands fa-facebook fa-lg mx-2" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.instagram.com/kidabelhaoficial/" target="_blank" rel="noopener noreferrer" aria-label="Siga-nos no Instagram">
+                <i class="fa-brands fa-instagram fa-lg mx-2" aria-hidden="true"></i>
+            </a>
+            <a href="https://x.com/kidabelha" target="_blank" rel="noopener noreferrer" aria-label="Siga-nos no X (Twitter)">
+                <i class="fa-brands fa-x-twitter fa-lg mx-2" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.youtube.com/user/kidabelhaoficial/" target="_blank" rel="noopener noreferrer" aria-label="Inscreva-se no nosso canal do YouTube">
+                <i class="fa-brands fa-youtube fa-lg mx-2" aria-hidden="true"></i>
+            </a>
+        </nav>
     </footer> 
     
 </body>

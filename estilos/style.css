@@ -51,17 +51,14 @@ body {
 /* ===========================
    IMAGENS RESPONSIVAS
    =========================== */
-
-/* Todas as imagens se adaptam sem distorcer */
 img {
     max-width: 100%;
-    height: auto;       /* mantém proporção */
+    height: auto;
     display: block;
 }
 
-/* Logo no header */
 header .logo {
-    max-width: 180px;   /* ajusta em telas pequenas */
+    max-width: 180px;
     height: auto;
     margin: 0 auto;
 }
@@ -85,7 +82,6 @@ header .logo {
     max-width: 200px;
 }
 
-/* Overlay escuro */
 header::before {
     content: "";
     position: absolute;
@@ -134,19 +130,6 @@ header::before {
     color: var(--laranja-queimado);
 }
 
-.navbar .btn-outline-success {
-    border-color: var(--laranja-queimado);
-    color: var(--laranja-queimado);
-    font-family: var(--font-subtitle);
-    transition: all 0.3s ease;
-}
-
-.navbar .btn-outline-success:hover {
-    background-color: var(--laranja-queimado);
-    color: var(--branco);
-    border-color: var(--vermelho-vibrante);
-}
-
 /* ===========================
    MAIN
    =========================== */
@@ -163,6 +146,7 @@ main {
     color: var(--branco);
     position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -177,9 +161,15 @@ main {
     z-index: 1;
 }
 
-.main-home .container {
+.main-home .container,
+.main-home .video-wrapper {
     position: relative;
     z-index: 2;
+    width: 100%;
+}
+
+.main-home .container {
+    padding-top: 20px;
 }
 
 .main-home p {
@@ -206,7 +196,10 @@ main {
     z-index: 1;
 }
 
-.main-sobre > * { position: relative; z-index: 2; }
+.main-sobre > * { 
+    position: relative; 
+    z-index: 2; 
+}
 
 /* Tours */
 .tabela-container {
@@ -216,9 +209,9 @@ main {
     padding: 20px;
     text-align: center;
 }
-/* MAIN com imagem de fundo - Tours */
+
 .main-tours {
-    background-image: url("../imagens/bg-main-tours.jpg"); /* troque pelo ficheiro da sua imagem */
+    background-image: url("../imagens/bg-main-tours.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -233,7 +226,7 @@ main {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(28, 28, 28, 0.6); /* overlay escuro */
+    background: rgba(28, 28, 28, 0.6);
     z-index: 1;
 }
 
@@ -242,6 +235,31 @@ main {
     z-index: 2;
 }
 
+/* Contatos */
+.main-contatos {
+    background-image: url("../imagens/bg-main-index02.jpg"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--branco);
+    min-height: 100vh;
+    position: relative;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.main-contatos::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(28, 28, 28, 0.6);
+    z-index: 1;
+}
+
+.main-contatos > * {
+    position: relative;
+    z-index: 2;
+}
 
 /* ===========================
    TABELAS
@@ -265,7 +283,8 @@ main {
 /* ===========================
    BOTÕES
    =========================== */
-button, .btn-primary {
+.btn-primary,
+.contact-form button[type="submit"] {
     background-color: var(--laranja-queimado);
     color: var(--branco);
     border: none;
@@ -277,8 +296,11 @@ button, .btn-primary {
     transition: background-color 0.3s ease;
 }
 
-button:hover, .btn-primary:hover {
+.btn-primary:hover,
+.contact-form button[type="submit"]:hover {
     background-color: var(--vermelho-vibrante);
+    color: var(--branco);
+    border-color: var(--vermelho-vibrante);
 }
 
 /* ===========================
@@ -326,10 +348,11 @@ h4, h5, h6 {
 /* ===========================
    CARDS
    =========================== */
-.card-album, .integrante-card {
+.card-album, 
+.integrante-card {
     border-radius: 10px;
     overflow: hidden;
-    margin: 15px 0;
+    margin: 0;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: 100%;
     display: flex;
@@ -341,18 +364,8 @@ h4, h5, h6 {
     color: var(--branco);
 }
 
-.card-album img, 
-.integrante-card img {
-    width: 100%;
-    height: 250px;        /* altura fixa */
-    object-fit: cover;    /* preenche sem distorcer */
-    object-position: center;
-    display: block;
-    border-radius: 0;     /* segue design clean */
-    background-position: top center;
-}
-
-.card-album-body, .card-body {
+.card-album-body, 
+.card-body {
     padding: 15px;
     flex: 1;
 }
@@ -362,7 +375,8 @@ h4, h5, h6 {
     font-weight: bold;
 }
 
-.card-album:hover, .integrante-card:hover {
+.card-album:hover, 
+.integrante-card:hover {
     transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
@@ -373,41 +387,66 @@ h4, h5, h6 {
 }
 
 /* ===========================
-   TOUR ITEM
-   =========================== */
-.tour-item {
-    background-color: var(--roxo-escuro);
-    color: var(--branco);
-    padding: 15px;
-    border-radius: 8px;
-    margin: 10px 0;
-    transition: background-color 0.3s ease;
-}
-
-.tour-item:hover {
-    background-color: var(--laranja-queimado);
-}
-
-/* ===========================
    FORMULÁRIO
    =========================== */
 form.contact-form {
-    background-color: var(--cinza-medio);
-    padding: 20px;
+    padding: 25px;
     border-radius: 8px;
-    max-width: 600px;
-    margin: 0 auto 30px auto;
+    margin-top: 20px;
 }
 
-form.contact-form input,
-form.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    border: 1px solid var(--branco);
+.pagina-contatos main {
+    color: var(--branco);
+}
+
+.pagina-contatos .form-label {
+    color: var(--amarelo-dourado);
+    font-weight: bold;
+}
+
+.pagina-contatos .form-control {
     background-color: var(--branco);
     color: var(--preto);
+}
+
+.pagina-contatos .form-control:focus {
+    background-color: var(--branco);
+    color: var(--preto);
+    border-color: var(--laranja-queimado);
+    box-shadow: 0 0 0 0.25rem rgba(232, 90, 44, 0.5);
+}
+
+.pagina-contatos .invalid-feedback {
+    color: var(--branco);
+    background-color: var(--vermelho-vibrante);
+    padding: 5px;
+    border-radius: 4px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+/* ===========================
+   VIDEO WRAPPER
+   =========================== */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    border-radius: 8px;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0; /* Esta linha remove a borda da forma correta */
 }
 
 /* ===========================
@@ -417,6 +456,7 @@ footer {
     background-color: var(--azul-noite);
     color: var(--branco);
     text-align: center;
+    padding: 20px 0;
 }
 
 .p-footer {
@@ -429,7 +469,9 @@ footer a {
     margin: 0 5px;
 }
 
-footer a:hover { color: var(--laranja-queimado); }
+footer a:hover { 
+    color: var(--laranja-queimado); 
+}
 
 footer i {
     font-size: 2rem;
@@ -446,5 +488,3 @@ footer a:hover i {
 .fa-instagram { color: #e4405f; }
 .fa-x-twitter { color: #000000; }
 .fa-youtube { color: #ff0000; }
-
-
